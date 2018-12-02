@@ -1,0 +1,104 @@
+.header
+  width: 100%
+  @include padding(85,0,0,0)
+  +media(1023)
+    padding: 20px 0 0 0
+    text-align: right
+
+
+  &__link
+    letter-spacing: 0.081713px
+    text-transform: uppercase
+    @include roboto(900,20)
+    position: relative
+    &:hover
+      &:after
+        display: block
+        content: ''
+        width: 130%
+        height: 0.31vw
+        position: absolute
+        bottom: -1.92vw
+        right: -20px
+        background: #fff
+    +media(1023)
+      padding-top: 20px
+    &.active
+      &:after
+        display: block
+        content: ''
+        width: 130%
+        height: 0.31vw
+        position: absolute
+        bottom: -1.92vw
+        right: -20px
+        background: #fff
+      +media(1280)
+        &:after
+          bottom: -25px
+      +media(1023)
+        &:after
+          display: none
+
+
+  &__nav
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    transition: .3s
+    +media(1023)
+      flex-direction: column
+      width: 100%
+      position: absolute
+      top: -5000px
+      z-index: 90
+      align-items: center
+      justify-content: center
+      background: #000
+      left: 0
+      &.is-hiden
+        top: 0
+        bottom: 0
+        height: 100%
+
+  &__inner
+    border-bottom: 1px solid #D0D0D0
+    @include padding(0,0,22,0)
+    +media(1023)
+      border: none
+
+
+
+
+
+.burger
+  display: none
+  padding-left: 24px
+  position: relative
+  z-index: 105
+  height: 12px
+  +media(1023)
+    display: inline-block
+
+
+  &__item
+    width: 20px
+    height: 3px
+    background: #fff
+    margin-bottom: 3px
+    transition: .5s
+
+
+  &__item.is-active:nth-child(2)
+    display: none
+
+
+  &__item.is-active:first-child
+    transform: rotate(45deg)
+
+
+
+  &__item.is-active:last-child
+    transform: rotate(-45deg)
+    margin-top: -6px

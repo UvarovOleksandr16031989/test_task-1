@@ -1,0 +1,113 @@
+
+=media($width)
+  @media only screen and (max-width: $width+ px)
+    @content
+
+
+@mixin roboto($weight,$size)
+  color: #fff
+  font-size: ($size/1280*100)+ vw
+  font-weight: $weight
+  font-family: 'Roboto', sans-serif
+  +media(1280)
+    font-size: $size+px
+
+@mixin line($line)
+  line-height: ($line/1280*100)+ vw
+  +media(1280)
+    font-size: $line+px
+
+@mixin padding($padding-top,$padding-right,$padding-bottom,$padding-left)
+  padding: ($padding-top/1280*100)+ vw ($padding-right/1280*100)+ vw ($padding-bottom/1280*100)+ vw ($padding-left/1280*100)+ vw
+
+  +media(1280)
+    padding: $padding-top +px $padding-right +px $padding-bottom +px $padding-left+px
+
+
+@mixin col($col)
+  width: (100%/12*$col)
+
+.col-1
+  @include col(1)
+
+.col-2
+  @include col(2)
+
+.col-3
+  @include col(3)
+
+.col-4
+  @include col(4)
+
+.col-5
+  @include col(5)
+
+.col-6
+  @include col(6)
+
+.col-7
+  @include col(7)
+
+.col-8
+  @include col(8)
+
+.col-9
+  @include col(9)
+
+.col-10
+  @include col(10)
+
+.col-11
+  @include col(11)
+
+.col-12
+  @include col(12)
+
++media(1023)
+  .col-md-12
+    @include col(12)
+
+
+.container
+  max-width: 86.72%
+  margin: 0 auto
+  +media(1023)
+    display: block
+
+
+.wrap
+  background: #181818
+
+.headline
+  @include padding(0,0,27,0)
+  @include roboto(700,16)
+
+
+.clearfix::after
+  content: ''
+  clear: both
+  display: table
+  overflow: hidden
+
+textarea
+  outline: none
+  resize: none
+  &:active, &:focus
+    outline: none
+    resize: none
+
+button
+  outline: none
+  border: none
+  &:active, &:focus
+    outline: none
+    border: none
+
+\:active,:hover,:focus
+  outline: none
+  outline-offset: 0
+
+select
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none

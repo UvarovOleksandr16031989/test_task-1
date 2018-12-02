@@ -1,0 +1,153 @@
+.users
+  @include padding(0,0,32,0)
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+
+
+  &__photo
+    @extend .your_message__photo
+    +media(680)
+      width: 100%
+
+
+  &__inner
+    @include padding(0,0,20,20)
+
+
+  &__name
+    @extend .your_message__name
+
+
+  &__likes
+    display: inline-block
+    width: 1.17vw
+    height: 1.17vw
+    min-height: 15px
+    min-width: 15px
+    background: url(../images/sprite/sprites.png) -51% 152%
+    background-size: 387%
+    &.active
+      background-position: 13% 86%
+
+
+  &__like-box
+    @include padding(0,0,0,20)
+
+  &__box
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    @include padding(0,0,12,0)
+
+
+  &__content
+    @include roboto(300,14)
+    text-align: justify
+    letter-spacing: 0.0571991px
+    &--green
+      color: #7ED321
+
+
+  &__container
+    width: 42.19vw
+    min-width: 540px
+    +media(680)
+      min-width: 100%
+      width: 100%
+
+
+  &__like,
+  &__reply
+    @include roboto(300,14)
+    letter-spacing: 0.0571991px
+    @include padding(0 ,13,0,0)
+    position: relative
+    cursor: pointer
+    &:after
+      content: ''
+      display: inline-block
+      width: 0.23vw
+      min-width: 3px
+      height: 0.23vw
+      min-height: 3px
+      position: absolute
+      right: 7px
+      top: 50%
+      transform: translate(0% ,-50%)
+      background: #fff
+
+
+
+  &__time
+    @include roboto(300,14)
+    letter-spacing: 0.0571991px
+    mix-blend-mode: normal
+    opacity: 0.5
+
+  &__footer
+    @include padding(20,0,0,0)
+
+
+.reply
+  @include padding(32,0,0,0)
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+  +media(710)
+    width: 100%
+    justify-content: flex-start
+
+  &__arrow
+    display: inline-block
+    width: 1.56vw
+    min-width: 20px
+    min-height: 17px
+    height: 1.33vw
+    background: url('../images/sprite/sprites.png') 14% 15%
+    background-size: 300%
+
+
+  &__photo
+    background: #D8D8D8
+    border-radius: 80px
+    width: 3.13vw
+    min-width: 40px
+    min-height: 40px
+    height: 3.13vw
+    position: relative
+    margin: 0 1.56vw 0 1.17vw
+    +media(1280)
+      margin: 0 20px 0 15px
+    +media(710)
+      margin-bottom: 10px
+    &:after
+      min-height: 8.16px
+      min-width: 8.16px
+      width: 0.63vw
+      height: 0.63vw
+      position: absolute
+      content: ''
+      display: block
+      bottom: 0
+      right: 0
+      border: 3px solid #000000
+      border-radius: 30px
+      background: #7ED321
+
+  &__textarea
+    width: 35.23vw
+    min-width: 451px
+    background: transparent
+    border: 1px solid #B9B9B9
+    border-radius: 4px
+    @include roboto(300,14)
+    letter-spacing: 0.0571991px
+    mix-blend-mode: normal
+    box-sizing: border-box
+    opacity: .5
+    @include padding(11,0,0,20)
+    +media(710)
+      min-width: 100%
